@@ -17,8 +17,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        height: 80px;
-        background-color: rgb(14, 20, 20);
+        height: 85px;
+        background-color: white;
         box-shadow: 0 3px 2px rgba(29, 29, 29, 0.4); /* Ombre */
        }
 
@@ -37,7 +37,7 @@
 
        .menu li{
         margin-right: 26px;
-        color: white;
+        color: rgb(20, 15, 15);
         font-size: 14px;
         text-transform: uppercase;
         cursor: pointer;
@@ -51,7 +51,7 @@
        .menu-burger{
         display: none;
         cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-        color: white;
+        color: rgb(3, 3, 3);
         font-size: 25px; /* Ajuste la taille de l'icône */
        
        }
@@ -60,6 +60,17 @@
        /*media query pour les ecrans plus petits */
 
        @media ( max-width: 900px){
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 85px;
+            background-color: white;
+            box-shadow: 0 3px 2px rgba(29, 29, 29, 0.4); /* Ombre */
+          
+           }
         .menu{
             display: none; /* menu disparait d'abord */
             flex-direction: column; /* aligner de façon vertical */
@@ -81,6 +92,7 @@
         }
 
         .menu li{
+            color: white;
            margin-bottom: 5px; 
         }
 

@@ -11,76 +11,169 @@
 
     <style>
         body {
-            display: flex;
-            justify-content: center; /* Centre le contenu horizontalement */
-            align-items: center;     /* Centre le contenu verticalement */
-                      /* Prend toute la hauteur de la fenêtre */
+           
             margin: 0;              /* Supprime les marges par défaut */
         }
+    
         
-        .formulaire {
-            display: flex;
-            align-items: flex-start; /* Aligne les éléments au début */
+        table{
+            margin: 0px auto;
+         
         }
-        
-        .colonne {
-            display: flex;
-            flex-direction: column;  /* Aligne les champs en colonne */
-            margin-right: 20px;      /* Espacement entre les colonnes */
+
+        .tab-history th, td {
+            padding: 15px; /* Espacement interne dans les cellules */
+            text-align: left; /* Alignement à gauche */
         }
-        
-        .champ {
-            margin-bottom: 10px;     /* Espacement entre les champs */
+
+        .tab-history th{
+            font-weight: normal;
         }
-        
-        .champ-textarea {
-            display: flex;
-            flex-direction: column;   /* Permet d'aligner le label et le textarea */
+        .tab-history tbody{
+            margin-top: 20px;
         }
-        
-        textarea {
-            height: 146px;           /* Ajuste la hauteur si nécessaire */ 
-            margin-top: 5px;        /* Ajoute un peu d'espacement en haut */
+
+        .tab-history  img{
+            height: 280px;
+            width:280;
+             /*background-color: rgb(153, 187, 226); Couleur de fond pour l'image (si nécessaire) */
+            padding: 10px ; /*  Espacement autour de l'image */
         }
+
+
+        .background-image{
+            background-image: url('/static/images/gloire.avif');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        .titre {
+            font-size: xx-large;
+            background-color: rgba(250, 247, 247, 0.466);
+            display: inline-block;
+            text-align: center;
+
+            margin: 300px 350px;
+
+            color: rgb(14, 12, 12);
+            padding: 15px;
+        }
+
+
+
+        .tab-quality th{
+            font-size: 40px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .tab-quality td{
+           
+            padding-top: 2px;
+        }
+
         
+
+        
+
+
+        
+       
     </style>
 </head>
 
 <body>
     
    
-    <div class="section-4">
-        <form action="" class="formulaire">
+        <div class="background-image">
+            <p class="titre ">
+                Découvrez l’élégance et la splendeur  à <br>
+               chaque pas .</p>
+        </div>
 
-            <div class="colonne">
-    
-                <div class="champ">
-                    {# <label for="Nom">Nom</label> #}
-                    <input type="text" id="nom" placeholder="Nom">
-                </div>
-    
-                <div class="champ">
-                    {# <label for="">Email</label> #}
-                    <input  type="Email" id="email" placeholder="E-mail">
-                </div>
-    
-               <div class="champ">
-                    {# <label for="telephone">Telephone</label> #}
-                    <input type="tel" id="telephone" placeholder="Telephone">
-                  
-               </div> 
-               
-    
-           </div>
-    
-           <div class="champ-textarea">
-            {# <label for="ùessage">Message</label> #}
-            <textarea  id="message" placeholder="laissez votre message..."></textarea>
+        <div class="content">
             
-           </div>
-    
-        </form>
-    </div>
+            <!-- Ajoute plus de contenu si nécessaire pour pouvoir défiler -->
+        </div>
+
+
+        <table class="tab-quality">
+            <thead>
+                <tr>
+                    <th>
+                        qualite
+                    </th>
+
+                    <th>chic</th>
+
+                    <th>style</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        Des produits d’exception <br>
+                        pour une satisfaction <br>
+                        garantie.
+                    </td>
+
+                    <td>
+                        Élégance et raffinement <br>
+                        pour chaque occasion.
+                    </td>
+
+                    <td>
+                        Exprimez votre personnalité avec <br>
+                        nos collections tendance.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    <table class="tab-history">
+        <thead>
+            <tr>
+                <th> <img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></th>
+                
+                <th> <strong>NOS BIJOUX</strong>
+                    Nos bijoux ne sont pas seulement des accessoires, <br>
+                    mais des symboles d’élégance et de raffinement.Ils <br>
+                    racontent des histoires, capturent des moments <br>
+                    précieux et incarnent des émotions profondes. <br>
+                    <br>
+                    Que ce soit pour célébrer un événement spécial ou<br>
+                    pour exprimer votre style unique, nos créations sont <br>
+                    conçues pour durer et pour être chéries à travers le temps.
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> <strong> NOS SANDALES</strong> <br>
+                    Nos sandales ne sont pas seulement des chaussures,mais <br>
+                    des symboles de confort et de style. Elles  racontent   <br>
+                    des histoires, capturent des moments précieux et    <br>
+                    incarnent des émotions profondes.   <br>
+        
+                    <br>
+                    Que ce soit pour une promenade estivale ou pour exprimer <br>
+                    votre style unique, nos créations sont conçues pour durer <br>
+                    et pour être chéries à travers le temps.
+        
+                    </p>
+                </td>
+                <td><img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 

@@ -10,17 +10,58 @@
     <style>
 
         body {
-             
-           
-           
             margin: 0; 
         }
 
-       .texte1{
-        font-size: 40px;
-        margin-left: 60px;
-        margin-top: 50px;
-       }
+        .image-container {
+            position: relative; /* Permet de positionner les éléments enfants par rapport à ce conteneur */
+        }
+        
+
+        .background-image{
+         
+            background-image: url('/static/images/superbe.avif');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        .titre {
+            position: absolute; /* Positionne le texte par rapport au conteneur parent */
+            top: 50%; /* Centre verticalement */
+            left: 50%; /* Centre horizontalement */
+            transform: translate(-50%, -50%); /* Ajuste le texte pour le centrer parfaitement */
+            color: white; /* Couleur du texte */
+            text-align: center; /* Centre le texte */
+            font-size: 3rem; /* Ajuste la taille du texte */
+
+            background-color: rgba(255, 255, 255, 0.349);
+            padding: 15px;
+            display: inline-block;
+        }
+
+
+
+       
+
+        .tab-quality{
+            margin: 55px auto;
+        }
+
+        .tab-quality th{
+            font-size: 40px;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .tab-quality td{
+           text-align: center;
+            padding-top: 2px;
+        }
 
 
 
@@ -49,92 +90,36 @@
         font-size: 35px;
        }
 
-       .paragraphe-on-woman{
+       
 
-        color: rgb(252, 246, 246);
-
-        margin-left: 22px;
-        font-size: 30px;
-
-        background-color: rgb(153, 187, 226); /* Couleur de fond pour l'image (si nécessaire) */
-        display: inline-block; /* Limite la largeur du fond au texte */
-        padding: 8px;
-        border-radius: 5px;
-
-        margin-bottom: 15px;
-
-       }
-
-       .paragraphe-on-woman:hover{
-        background-color: rgb(189, 103, 103);
-       }
-
-       /*.contenu #texte1-3{
-        font-size: 30px;
-        padding: 20px;
-
-        border-radius: 45%;
-        background-color: brown;
-       }*/
-
-    .black-woman {
-        display: flex; /* Permet de disposer l'image et le texte côte à côte */
-    }
-
-    .black-woman img {
-        height: 430px;
-        width: auto;
-        background-color: rgb(153, 187, 226); /* Couleur de fond pour l'image (si nécessaire) */
-        padding: 20px ; /* Espacement autour de l'image */
-
-    }
-
-    .black-woman p {
-        display: inline-block; /* Limite la largeur du fond au texte */
-        background-color: #f0f0f0; /* Couleur de fond */
-        padding: 15px; /* Espacement autour du texte */
-        border-radius: 3px; /* Coins arrondis, optionnel */
-        margin-left: 10px; /* Ajoute un espace entre l'image et le texte */
-        height: 240px;
-    }
+       
+    
 
 
     /*deuxieme section */
-    .deuxieme-section{
-       
-        margin-top: 40px;
-        margin-bottom: 50px;
-        display: flex;
-      
-        /*margin: 20px auto;
-        justify-content: center; 
-        align-items: center;  */
+     
+    .tab-history {
+        margin: 0px auto;
     }
 
-    .sandale-1{
-        display: none;
+    .tab-history th, td {
+        padding: 15px; /* Espacement interne dans les cellules */
+        text-align: left; /* Alignement à gauche */
     }
 
-    .deuxieme-section .para-section-2{
-        margin-left: 28%;
-
-       
-        display: inline-block; /* Limite la largeur du fond au texte */
-        background-color: #f0f0f0; /* Couleur de fond */
-        padding: 15px; /* Espacement autour du texte */
-        border-radius: 3px; /* Coins arrondis, optionnel */
-        height: 240px;
+    .tab-history th{
+        font-weight: normal;
     }
 
-    .deuxieme-section img{
-        
-        height: 490px;
-        width: auto;
+    .tab-history tbody{
+        margin-top: 20px;
+    }
 
-        margin-left: 10px;
-       
-        background-color: rgb(153, 187, 226); /* Couleur de fond pour l'image (si nécessaire) */
-        padding: 20px ; /* Espacement autour de l'image */
+    .tab-history  img{
+        height: 280px;
+        width:280;
+         /*background-color: rgb(153, 187, 226); Couleur de fond pour l'image (si nécessaire) */
+        padding: 10px ; /*  Espacement autour de l'image */
     }
 
 
@@ -270,59 +255,87 @@
 
 
        @media ( max-width: 675px){
+
             body {
                 font-size: 14px; /* Réduit la taille de police pour l'iPhone 12 */
             }
-            .texte1 {
-                font-size: 1.5rem; /* Ajuste la taille pour ce texte spécifique */
-                margin-left: 5%; /* Ajuste la marge pour le mobile */
-            }
+            
             h1, h2, h3, p {
                 font-size: 1.2rem; /* Ajuste la taille des titres et paragraphes */
             }
-
-
 
             .quality-icon, .chic-icon ,.style-icon{
                 font-size: 25px;
             }
 
+            .background-image{
+               
+                    background-attachment: scroll;  /*Change à scroll sur mobile */
+                    height: 55vh; /* Ajuste la hauteur pour mobile */
+                  
+                    background-size: contain; /* Adapte la taille de l'image */ 
 
-            .black-woman{
-                flex-direction: column;
+                    margin-bottom: 100px;
+                    text-align: center;
+
+                   
+                   
             }
 
-            .black-woman img {
-                height: 300px; /* Hauteur réduite pour mobile */
-                width: 100%; /* Largeur 100% pour s'adapter à l'écran */
-                object-fit: cover; /* Ajuste l'image pour couvrir tout l'espace */
-            }
-
-            .black-woman p {
-                display: inline-block; /* Limite la largeur du fond au texte */
-                background-color: #f0f0f0; /* Couleur de fond */
-                padding: 15px; /* Espacement autour du texte */
-                border-radius: 3px; /* Coins arrondis, optionnel */
-                margin-top: 20px;
-                margin-left: 10px; /* Ajoute un espace entre l'image et le texte */
-                height: 490px;
-            }
-
-
-            /*deuxieme section*/
-            .deuxieme-section{
-                flex-direction: column;
-                margin-top: 40px;
-                margin-bottom: 50px;
+            .titre{
+             
+                color: white; /* Couleur du texte */
+                font-size: 15px; /* Ajuste la taille du texte */
+                margin: 0px auto; /* Enlève la marge par défaut */
+                display: inline-block;
+                padding: 6px;
+               
                 
+               
             }
 
-            .sandale-1{
-                display: flex;
+            
+        
+            .tab-quality{
+                margin-top: -80px;
             }
+            
+            .tab-quality th{
+                font-size: 20px;
+                font-weight: bold;
+            }
+    
+            .tab-quality td{
+                font-size: 12px;
+               text-align: center;
+                padding-top: 2px;
+            }
+    
 
-            .sandale-2{
-                display: none;
+
+            .tab-history {
+                margin: 0px auto;
+            }
+        
+            .tab-history th, td {
+                font-size: 11px;
+                padding: 10px; /* Espacement interne dans les cellules */
+                text-align: left; /* Alignement à gauche */
+            }
+        
+            .tab-history th{
+                font-weight: normal;
+            }
+        
+            .tab-history tbody{
+                margin-top: 20px;
+            }
+        
+            .tab-history  img{
+                height: 250px;
+                width:280;
+                 /*background-color: rgb(153, 187, 226); Couleur de fond pour l'image (si nécessaire) */
+                padding: 2px ; /*  Espacement autour de l'image */
             }
         
 
@@ -344,11 +357,6 @@
             }
 
 
-            
-        
-        
-
-
 
 
             .tableau-contact tr {
@@ -356,27 +364,35 @@
             }
         
             .tableau-contact td {
-                font-size: 10px;
+                font-size: 9px;
                 justify-content: flex-start; /* Aligne les éléments au début */
             }
             
             .tableau-contact td{
-                padding: 0px 15px;
+                padding: 0px 12px;
             }
 
-
+           
             .formulaire {
-              
-               margin: 8px auto;
-               
-              
+              top: 50%;
+              left: 50%;
+
                 /*align-items: flex-start;  Aligne les éléments au début */
             }
 
             .colonne {
-                
-                margin-right: 10px;      /* Espacement entre les colonnes */
+                margin-right: 7px;      /* Espacement entre les colonnes */
             }
+
+           
+
+
+            input, textarea {
+                font-size: 0.9rem; /* Réduit la taille de la police */
+                padding: 8px; /* Réduit le padding */
+            }
+
+            
            
 
 
@@ -389,132 +405,108 @@
 
     {% include 'layouts/navbar/navbar.html' %}
 
+    <div class="image-container"></div>
+        <div class="background-image">
+            <p class="titre ">
+                Découvrez l’élégance et  la <br>
+                splendeur  à chaque pas .</p>
+        </div>
+    </div>
 
-    <p class="texte1">
-        Bienvenue <br>
-        Chez la boutique de la Gloire
-
-    </p>
-
-
-    <section class="section-un bg-white dark:bg-gray-900 "></section>
-
-        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    
 
 
-            {# <div class="max-w-screen-md mb-8 lg:mb-16">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                    Designed for business teams like yours</h2>
-                <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-                    Here at Flowbite we focus on markets where technology,
-                    innovation, and capital can unlock long-term value and drive economic growth.</p>
-            </div> #}
-
-
-            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-
-                <div>
+    <table class="tab-quality" id="about-us">
+        <thead>
+            <tr>
+                <th>
                     <div class="quality-icon">
                         <i class="fa-solid fa-star"></i></i>
                     </div>
+                    qualité
+                </th>
 
-                    {# <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    </div> #}
-
-                    <h3 class="mb-2 text-4xl  text-3xl md:text-4xl font-bold dark:text-white uppercase">qualite</h3>
-                    <p class="text-lg text-base md:text-lg  text-gray-500  dark:text-gray-400">Des produits d’exception
-                        pour une satisfaction
-                        garantie.</p>
-                </div>
-
-                <div>
+                <th>
                     <div class="chic-icon ">
                         <i class="fa-solid fa-check"></i></i>
-                    </div>
-                    {# <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
-                    </div> #}
-                    <h3 class="mb-2  text-4xl  text-3xl md:text-4xl  font-bold dark:text-white uppercase">chic</h3>
-                    <p class="text-lg text-base md:text-lg  text-gray-500 dark:text-gray-400">Élégance et raffinement
-                        pour chaque occasion.</p>
-                </div>
+                    </div>chic
+                </th>
 
-                <div>
-
+                <th>
                     <div class="style-icon">
                         <i class="fa-solid fa-signature"></i></i>
-                    </div>
-                    {# <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                        <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>
-                    </div> #}
+                    </div>style
+                </th>
+            </tr>
+        </thead>
 
-                    {# text-4xl text-3xl md:text-4xl #}
-                    <h3 class="mb-2 text-4xl  text-3xl md:text-4xl   font-bold dark:text-white uppercase">style</h3>
-                    <p class="text-lg text-base md:text-lg  text-gray-500 dark:text-gray-400">Exprimez votre personnalité avec
-                        nos collections tendance.</p>
-                </div>
+        <tbody>
+            <tr>
+                <td>
+                    Des produits d’exception <br>
+                    pour une satisfaction <br>
+                    garantie.
+                </td>
 
+                <td>
+                    Élégance et raffinement <br>
+                    pour chaque occasion.
+                </td>
 
-            </div>
-        </div>
-
-        <p class="paragraphe-on-woman uppercase" id="about-us"> Notre histoire</p>
-
-
-        <div class="black-woman">
-
-            <img src="{{ url_for('static', filename='images/woman.jpg') }}" alt="black-woman">
-
-            <p class="woman-PARA">
-                <strong> NOS BIJOUX</strong> <br>
-                Nos bijoux ne sont pas seulement des accessoires,<br>
-                mais des symboles d’élégance et de raffinement.Ils <br>
-                racontent des histoires, capturent des moments <br>
-                précieux et incarnent des émotions profondes.<br>
-
-                <br>
-
-                Que ce soit pour célébrer un événement spécial ou <br>
-                pour exprimer votre style unique, nos créations sont <br>
-                conçues pour durer et pour être chéries à travers le temps.
-
-            </p>
-        </div>
-
-
-      </section>
+                <td>
+                    Exprimez votre personnalité avec <br>
+                    nos collections tendance.
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
 
       {# deuxieme section  #}
 
-      <section class="deuxieme-section">
+      <table class="tab-history">
+        <thead>
+            <tr>
+                {# <th> <img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></th> #}
+                <th> <img src="{{url_for('static',filename='images/femme-collier.jpg')}}" alt=""></th>
+                
+                <th> <strong>NOS BIJOUX</strong>
+                    Nos bijoux ne sont pas seulement des accessoires, <br>
+                    mais des symboles d’élégance et de raffinement.Ils <br>
+                    racontent des histoires, capturent des moments <br>
+                    précieux et incarnent des émotions profondes. <br>
+                    <br>
+                    Que ce soit pour célébrer un événement spécial ou<br>
+                    pour exprimer votre style unique, nos créations sont <br>
+                    conçues pour durer et pour être chéries à travers le temps.
+                </th>
+            </tr>
+        </thead>
 
-        <img class="sandale-1" src="{{ url_for('static',filename='images/sandale hermes.webp')}}" alt="sandale">
+        <tbody>
+            <tr>
+                <td> <strong> NOS SANDALES</strong> <br>
+                    Nos sandales ne sont pas seulement des chaussures,mais <br>
+                    des symboles de confort et de style. Elles  racontent   <br>
+                    des histoires, capturent des moments précieux et    <br>
+                    incarnent des émotions profondes.   <br>
+        
+                    <br>
+                    Que ce soit pour une promenade estivale ou pour exprimer <br>
+                    votre style unique, nos créations sont conçues pour durer <br>
+                    et pour être chéries à travers le temps.
+        
+                    </p>
+                </td>
+                {# <td><img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></td> #}
+                <td><img src="{{url_for('static',filename='images/sandales-oasis.webp')}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
 
-        <p class="para-section-2">
 
-
-            <strong> NOS SANDALES</strong> <br>
-            Nos sandales ne sont pas seulement des chaussures,mais <br>
-            des symboles de confort et de style. Elles  racontent   <br>
-            des histoires, capturent des moments précieux et    <br>
-            incarnent des émotions profondes.   <br>
-
-            <br>
-            Que ce soit pour une promenade estivale ou pour exprimer <br>
-            votre style unique, nos créations sont conçues pour durer <br>
-            et pour être chéries à travers le temps.
-
-            </p>
-
-       
-            <img class="sandale-2" src="{{ url_for('static',filename='images/sandale hermes red.webp')}}" alt="sandale2">
-       
-
-      </section>
-    
+         
 
       {# deuxieme section #}
 
@@ -543,12 +535,12 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a href="https://www.facebook.com/"><i class="fa-brands
+                                <a href="https://www.facebook.com/profile.php?id=100086034666770&mibextid=LQQJ4d"><i class="fa-brands
                                     fa-facebook"></i> Facebook</a>
                                 
                             </td>
 
-                            <td> <a href="" <i class="fa-brands fa-whatsapp"></i> 06 12 34 56 78</a> </td>
+                            <td> <a href="" <i class="fa-brands fa-whatsapp"></i>+241 77011118</a> </td>
 
                             <td> <a href="" <i class="fa-regular fa-envelope"></i></a> boutiquedelagloire@gmail.com</td>
                         </tr>
@@ -559,7 +551,7 @@
                                     fa-instagram"></i> Instagram</a>
                             </td>
 
-                            <td> <a href="" <i class="fa-brands fa-whatsapp"></i> 06 12 34 56 78 </a>  </td>
+                            <td> <a href="" <i class="fa-brands fa-whatsapp"></i>+221 777696873</a>  </td>
                         </tr>
                     </tbody>
 
@@ -602,8 +594,6 @@
                     <input type="tel" id="telephone" placeholder="Telephone">
                   
                </div> 
-               
-    
            </div>
     
            <div class="champ-textarea">

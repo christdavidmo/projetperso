@@ -11,7 +11,7 @@ def homeV():
     #return render_template('layouts/navbar/navbar.html')
     return render_template('visitors/visitors.html')
     #return render_template('layouts/footer/footer.html')
-    # return render_template('visitors/test.html')
+    #return render_template('visitors/test.html')
 
 
 # @app.route('navbar')
