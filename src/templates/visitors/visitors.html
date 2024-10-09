@@ -103,7 +103,7 @@
     }
 
     .tab-history th, td {
-        padding: 15px; /* Espacement interne dans les cellules */
+        padding: 20px; /* Espacement interne dans les cellules */
         text-align: left; /* Alignement à gauche */
     }
 
@@ -120,6 +120,26 @@
         width:280;
          /*background-color: rgb(153, 187, 226); Couleur de fond pour l'image (si nécessaire) */
         padding: 10px ; /*  Espacement autour de l'image */
+    }
+
+    .tab-history .tab-quality  {
+        opacity: 0;
+        animation: fadeIn 0.9s forwards;
+    }
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    .tab-history img {
+        transition: transform 0.3s ease;
+    }
+    
+    .tab-history th:hover img,
+    .tab-history td:hover img {
+        transform: scale(1.05); /* Agrandir légèrement */
     }
 
 
@@ -270,7 +290,7 @@
 
             .background-image{
                
-                    background-attachment: scroll;  /*Change à scroll sur mobile */
+                    /*background-attachment: scroll;  Change à scroll sur mobile */
                     height: 55vh; /* Ajuste la hauteur pour mobile */
                   
                     background-size: contain; /* Adapte la taille de l'image */ 
@@ -327,8 +347,8 @@
                 font-weight: normal;
             }
         
-            .tab-history tbody{
-                margin-top: 20px;
+            .tab-history td{
+                padding-top: 40px;
             }
         
             .tab-history  img{
