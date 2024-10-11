@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='css/output.css')}}">
-
-    <title>boutiqueG</title>
+    <title>boutiquedeLagloire</title>
 
     <style>
 
@@ -43,11 +42,19 @@
         }
 
 
-
+        /*.table-container {
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            /*align-items: center;  Centre verticalement */
+            /*height: 100vh; /* Hauteur de l'écran, ajuste selon tes besoins
+        }*/
        
-
+        .table-container {
+            text-align: center; /* Centre le contenu à l'intérieur du conteneur */
+        }
         .tab-quality{
-            margin: 55px auto;
+            
+            margin: auto; /* Centre le tableau */
         }
 
         .tab-quality th{
@@ -209,9 +216,7 @@
     }
 
 
-    .section-4{
-        text-align: center;
-    }
+   
 
     .titre-formulaire{
         font-size: 25px;
@@ -219,40 +224,42 @@
         text-decoration: underline;
         text-align: center;
 
-        margin-top: 50px;
+        margin-top: 44px;
     }
 
     
 
-
+    .section-4{
+        text-align: center;
+    }
     .formulaire {
         display: flex;
-       margin: 20px auto;
-       justify-content: center; /* Centre le contenu horizontalement */
-       align-items: center;  
-      
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center;  
         /*align-items: flex-start;  Aligne les éléments au début */
     }
-    
+
     .colonne {
         display: flex;
-        flex-direction: column;  /* Aligne les champs en colonne */
-        margin-right: 20px;      /* Espacement entre les colonnes */
+        flex-direction: column; /* Colonne pour les champs */
+        align-items: center; /* Centre les champs */
     }
-    
-    .champ {
-        margin-bottom: 10px;     /* Espacement entre les champs */
+    .champs{
+        margin: 6px 15px;
     }
-    
-    .champ-textarea {
-        display: flex;
-        flex-direction: column;   /* Permet d'aligner le label et le textarea */
-        margin-bottom: 10px;
+
+    .textareaa {
+        margin: 10px 0px; /* Ajuste l'espacement au-dessus du textarea */
     }
-    
+
     textarea {
-        height: 149px;           /* Ajuste la hauteur si nécessaire */   
+        height: 150px;           /* Ajuste la hauteur si nécessaire */   
     }
+
+     /*.input-champ, .textarea-champ{
+        max-width: 95%; Largeur maximum pour les écrans de petite taille
+    } */
+   
 
     .btn-send{ 
 
@@ -297,9 +304,7 @@
 
                     margin-bottom: 100px;
                     text-align: center;
-
-                   
-                   
+ 
             }
 
             .titre{
@@ -393,28 +398,38 @@
             }
 
            
-            .formulaire {
-              top: 50%;
-              left: 50%;
-
-                /*align-items: flex-start;  Aligne les éléments au début */
-            }
-
-            .colonne {
-                margin-right: 7px;      /* Espacement entre les colonnes */
-            }
-
-           
-
-
-            input, textarea {
-                font-size: 0.9rem; /* Réduit la taille de la police */
-                padding: 8px; /* Réduit le padding */
-            }
-
             
-           
+          
+            .titre-formulaire{
+                font-size: 30px;
+            }
+           .formulaire{
+            flex-direction: column; /* Colonne pour mobile */
+            align-items: center;
+           }
 
+           .colonne{
+            margin-top: 15px;
+           }
+
+            .champs{
+                margin: 5px 2px;
+                border-radius: 5px;
+               
+            }
+
+            .input-champ{
+                width: 280px;
+                border-radius: 5px;
+            }
+
+            textarea {
+                width: 240px;           /* Ajuste la hauteur si nécessaire */   
+
+            }
+        
+    
+            
 
         }
 
@@ -436,6 +451,7 @@
     
 
 
+   <div class="table-container">
     <table class="tab-quality" id="about-us">
         <thead>
             <tr>
@@ -480,6 +496,7 @@
             </tr>
         </tbody>
     </table>
+   </div>
 
 
 
@@ -492,7 +509,7 @@
                 <th> <img src="{{url_for('static',filename='images/femme-collier.jpg')}}" alt=""></th>
                 
                 <th> <strong>NOS BIJOUX</strong>
-                    Nos bijoux ne sont pas seulement des accessoires, <br>
+                     ne sont pas seulement des accessoires, <br>
                     mais des symboles d’élégance et de raffinement.Ils <br>
                     racontent des histoires, capturent des moments <br>
                     précieux et incarnent des émotions profondes. <br>
@@ -506,17 +523,15 @@
 
         <tbody>
             <tr>
-                <td> <strong> NOS SANDALES</strong> <br>
-                    Nos sandales ne sont pas seulement des chaussures,mais <br>
-                    des symboles de confort et de style. Elles  racontent   <br>
+                <td> <strong> NOS SANDALES</strong> 
+                     ne sont pas seulement des chaussures,mais <br>
+                    des symboles de confort et de style.Elles racontent <br>
                     des histoires, capturent des moments précieux et    <br>
                     incarnent des émotions profondes.   <br>
-        
                     <br>
                     Que ce soit pour une promenade estivale ou pour exprimer <br>
                     votre style unique, nos créations sont conçues pour durer <br>
                     et pour être chéries à travers le temps.
-        
                     </p>
                 </td>
                 {# <td><img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></td> #}
@@ -590,43 +605,41 @@
       {# section trois #}
 
 
-    <div class="section-4">
+   
 
+       <div class="section-4">
         <p class="titre-formulaire">ecrivez-nous</p>
 
-        <form action="" class="formulaire" id="more">
-          
+        <form action="" class="formulaire">
 
             <div class="colonne">
     
-                <div class="champ">
-                    {# <label for="Nom">Nom</label> #}
-                    <input type="text" id="nom" placeholder="Nom">
+                <div class="champs">
+                   
+                        <input type="text" placeholder="NOM" class="input-champ" >
+                </div>
+        
+                <div class="champs">
+                   
+                    <input type="text" placeholder="PRENOM" class="input-champ">
                 </div>
     
-                <div class="champ">
-                    {# <label for="">Email</label> #}
-                    <input  type="Email" id="email" placeholder="E-mail">
+                <div class="champs">
+                   
+                    <input type="EMAIL" placeholder="E-MAIL" class="input-champ" >
                 </div>
     
-               <div class="champ">
-                    {# <label for="telephone">Telephone</label> #}
-                    <input type="tel" id="telephone" placeholder="Telephone">
-                  
-               </div> 
-           </div>
+            </div>
     
-           <div class="champ-textarea">
-            {# <label for="ùessage">Message</label> #}
-            <textarea  id="message" placeholder="laissez votre message..."></textarea>
-            
-           </div>
+            <div class="textareaa">
+                <textarea name="" id="" placeholder="laisser votre message içi..." class="textarea-champ"></textarea>
+            </div>
     
-         
         </form>
 
         <button class="btn-send" type="submit"> Envoyer</button>
-    </div>
+       </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
