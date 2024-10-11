@@ -339,7 +339,7 @@
 
 
             .tab-history {
-                margin: 0px auto;
+                margin: 15px auto;
             }
         
             .tab-history th, td {
@@ -607,7 +607,7 @@
 
    
 
-       <div class="section-4">
+       <div class="section-4" id="more">
         <p class="titre-formulaire">ecrivez-nous</p>
 
         <form action="" class="formulaire">
@@ -637,11 +637,31 @@
     
         </form>
 
-        <button class="btn-send" type="submit"> Envoyer</button>
+        <button class="btn-send" type="submit" onclick="showmessage()"> Envoyer</button>
+        
        </div>
-    
+
+       <div id="responseMessage" style="display: none; background-color:
+        #4CAF50; color: white; padding: 15px; position: fixed; top: 
+        10px; left: 50%; transform: translateX(-50%); z-index: 1000; ">
+
+        Message envoyé
+        </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <script>
+        function showmessage(){
+            const messageElement= document.getElementById("responseMessage");
+            messageElement.style.display = "block";
+
+             // Optionnel : cacher le message après quelques secondes
+        setTimeout(() => {
+            messageElement.style.display = "none";
+        }, 3000); // Cacher après 3 secondes
+        }
+    </script>
 
 
    {% include 'layouts/footer/footer.html' %}
