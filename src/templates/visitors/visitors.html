@@ -32,9 +32,9 @@
             top: 50%; /* Centre verticalement */
             left: 50%; /* Centre horizontalement */
             transform: translate(-50%, -50%); /* Ajuste le texte pour le centrer parfaitement */
-            color: white; /* Couleur du texte */
-            text-align: center; /* Centre le texte */
-            font-size: 3rem; /* Ajuste la taille du texte */
+            color: white; 
+            text-align: center; 
+            font-size: 3rem; 
 
             background-color: rgba(255, 255, 255, 0.349);
             padding: 15px;
@@ -125,8 +125,8 @@
     .tab-history  img{
         height: 280px;
         width:280;
-         /*background-color: rgb(153, 187, 226); Couleur de fond pour l'image (si nécessaire) */
-        padding: 10px ; /*  Espacement autour de l'image */
+        
+        padding: 10px ; 
     }
 
     .tab-history .tab-quality  {
@@ -165,7 +165,6 @@
     /*.para-section-3{
         display: inline-block;
         padding: 15px;
-        background-color: rgb(153, 187, 226); /* Couleur de fond pour l'image (si nécessaire) 
         border-radius: 5px;
 
         color: rgb(252, 246, 246);
@@ -210,7 +209,7 @@
     }
 
     .tableau-contact a:hover{
-        color: rgb(153, 187, 226); /* Couleur de fond pour l'image (si nécessaire) */
+        color: rgb(153, 187, 226); 
         text-transform: lowercase;
 
     }
@@ -274,6 +273,79 @@
     .btn-send:hover {
         background-color: #b3a700; /* Couleur au survol */
     }
+
+
+
+
+    .carrousel{
+        margin: 30px auto;
+
+         position: relative;
+         width: 300px;
+        
+         overflow: hidden; 
+     }
+
+     .carrousel-images{
+         display: flex;
+         transition: transform 0.5s ease; 
+     }
+
+     .carrousel-images img{
+         width: 300px;
+         flex-shrink: 0; /* Empêche les images de rétrécir */
+     }
+
+     .buttons{
+         display: flex;
+         justify-content: space-between;
+        position: absolute;
+        bottom: 50%;
+        width: 100%;
+     }
+
+     .prev,.next{
+         background-color: rgba(247, 247, 247, 0);
+         border: 0px ;
+         cursor: pointer; /* Change le curseur au survol */
+        
+     }
+
+     button{
+         color: rgb(12, 11, 12);
+     }
+    
+     .prev,.next {
+         font-size: 32px;
+     }
+
+     button:disabled {
+        color: #f1eaea; /* Couleur de fond pour les boutons désactivés */
+        cursor: not-allowed; /* Change le curseur pour indiquer que le bouton est désactivé */
+    }
+
+
+
+
+    .indicator-container {
+        display: flex; /* Affiche les indicateurs en ligne */
+        justify-content: center; /* Centre les indicateurs horizontalement */
+        margin-top: 10px; /* Espacement au-dessus des indicateurs */
+    }
+    
+    .indicator {
+        width: 10px; /* Largeur de chaque indicateur */
+        height: 10px; /* Hauteur de chaque indicateur */
+        border-radius: 50%; /* Arrondi pour créer un cercle */
+        background-color: #c4c1c1e8; /* Couleur de fond des indicateurs */
+        margin: 0 5px; /* Espacement entre les indicateurs */
+        cursor: pointer; /* Change le curseur au survol */
+    }
+    
+    .indicator.active {
+        background-color: #007bff; /* Couleur active de l'indicateur */
+    }
+    
 
 
 
@@ -428,8 +500,6 @@
 
             }
         
-    
-            
 
         }
 
@@ -500,13 +570,59 @@
 
 
 
+   {#    #}
+
+    <div class="carrousel">
+
+            <div class="carrousel-images">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-15.jpg')}}" alt="image_1" indeex="0">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-32.jpg')}}" alt="image_3">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-15.jpg')}}" alt="image_4">
+                {# <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-39.jpg')}}" alt="image_5"> #}
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-41.jpg')}}" alt="image_6">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-44.jpg')}}" alt="image_7">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-46.jpg')}}" alt="image_8">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-35-50.jpg')}}" alt="image_9">
+                <img src="{{url_for('static',filename='images/sandales/sandale_hermès.jpg')}}" alt="image_10">
+                <img src="{{url_for('static',filename='images/sandales/photo_2024-10-12_13-36-01.jpg')}}" alt="image_11">
+               
+
+
+
+            </div>
+
+            <div class="buttons">
+                <button class="prev" onclick="prevImage()" disabled>&#10094;</button>
+                <button class="next" onclick="nextImage()">&#10095;</button>
+
+                {# 
+                <div class="prev" onclick="prevImage()" >
+                    <i  class="fa-solid fa-caret-left fa-bounce" ></i>
+                </div>
+
+                <div class="next" onclick="nextImage()">
+                    <i class="fa-solid fa-caret-right fa-bounce"></i></i>
+                </div> #}
+            </div>
+
+            <div class="indicator-container">
+                <!-- Indicateurs vont ici -->
+            </div>
+
+
+    </div>
+
+
+
+   {#    #}
+
       {# deuxieme section  #}
 
       <table class="tab-history">
         <thead>
             <tr>
                 {# <th> <img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></th> #}
-                <th> <img src="{{url_for('static',filename='images/femme-collier.jpg')}}" alt=""></th>
+                <th> <img src="{{url_for('static',filename='images/sandales/nos_bijoux.jpg')}}" alt=""></th>
                 
                 <th> <strong>NOS BIJOUX</strong>
                      ne sont pas seulement des accessoires, <br>
@@ -535,7 +651,7 @@
                     </p>
                 </td>
                 {# <td><img src="{{url_for('static',filename='images/woman.jpg')}}" alt=""></td> #}
-                <td><img src="{{url_for('static',filename='images/sandales-oasis.webp')}}" alt=""></td>
+                <td><img src="{{url_for('static',filename='images/sandales/sandale_hermès.jpg')}}" alt=""></td>
             </tr>
         </tbody>
     </table>
@@ -661,6 +777,81 @@
             messageElement.style.display = "none";
         }, 3000); // Cacher après 3 secondes
         }
+
+
+
+
+
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const images = document.querySelector('.carrousel-images');
+            const totalImages = images.children.length;
+        
+            // Gérer l'indice
+            if (index < 0) {
+                currentIndex = 0; // On ne peut pas aller plus loin à gauche
+            } else if (index >= totalImages) {
+                currentIndex = totalImages - 1; // On ne peut pas aller plus loin à droite
+            } else {
+                currentIndex = index; // Mettre à jour l'indice
+            }
+        
+            // Déplacer le conteneur des images
+            images.style.transform = `translateX(${-currentIndex * 300}px)`; // Ajuste selon la largeur de l'image
+        
+            // Met à jour les boutons et les indicateurs
+            updateButtons();
+            updateIndicators();
+        }
+        
+        function nextImage() {
+            showImage(currentIndex + 1);
+        }
+        
+        function prevImage() {
+            showImage(currentIndex - 1);
+        }
+        
+        function updateButtons() {
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+        
+            // Désactiver le bouton Précédent si on est à la première image
+            prevButton.disabled = (currentIndex === 0);
+            // Désactiver le bouton Suivant si on est à la dernière image
+            nextButton.disabled = (currentIndex === document.querySelector('.carrousel-images').children.length - 1);
+        }
+        
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active'); // Ajoute la classe active à l'indicateur courant
+                } else {
+                    indicator.classList.remove('active'); // Retire la classe active des autres indicateurs
+                }
+            });
+        }
+        
+        function initIndicators() {
+            const images = document.querySelector('.carrousel-images').children;
+            const indicatorContainer = document.querySelector('.indicator-container');
+        
+            // Crée des indicateurs pour chaque image
+            for (let i = 0; i < images.length; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                indicator.onclick = () => showImage(i); // Permet de changer d'image en cliquant sur l'indicateur
+                indicatorContainer.appendChild(indicator);
+            }
+        }
+        
+        // Appel initial pour initialiser les indicateurs
+        initIndicators();
+        updateIndicators();
+        
     </script>
 
 
